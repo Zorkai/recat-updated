@@ -11,7 +11,7 @@ from lxml.etree import strip_tags
 from logcatcolor.column import *
 from logcatcolor.format import Format
 import re
-from cStringIO import StringIO
+from io import StringIO
 
 def layout(cls):
     Layout.TYPES[cls.NAME] = cls
