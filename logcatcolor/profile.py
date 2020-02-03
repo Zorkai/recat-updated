@@ -43,7 +43,7 @@ class Profile(object):
         self.tags = None
         self.tag_colors = None
         if isinstance(tags, dict):
-            self.tags = tags.keys()
+            self.tags = list(tags.keys())
             self.tag_colors = tags
         elif isinstance(tags, (list, tuple)):
             self.tags = tags
@@ -102,14 +102,14 @@ class Profile(object):
         if self.priorities and data.get("priority") not in self.priorities:
             return False
 
-        if self.package_search and data.get("pid") not in self.pid_map.values():
+        if self.package_search and data.get("pid") not in list(self.pid_map.values()):
             return False
 
         if not self.filters:
             return True
 
         for filter in self.filters:
-            if not filter(data):
+            if not list(filter(data)):
                 return False
 
         return True
