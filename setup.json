@@ -1,0 +1,15 @@
+{
+    "name": "recat-color",
+    "version": "0.1.1",
+    "description": "A colorful alternative to \"adb logcat\" with on-the-fly-deobfuscation",
+    "author": "Rotem Mizrachi-Meidan",
+    "author_email": "rotem@everything.me",
+    "url": "http://github.com/EverythingMe/recat",
+    "scripts": [
+        "recat"
+    ],
+    "install_requires": [
+        "colorama",
+        "pyretrace"
+    ]
+}
